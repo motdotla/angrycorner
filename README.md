@@ -1,14 +1,15 @@
 # angrycorner
 
+<http://angrycorner.herokuapp.com>
+
 ## Usage
 
 ```
 virtualenv env
 source env/bin/activate
+pip install -r requirements.txt
 ```
 
 ```
-pip
-pip freeze
-requirements.txt
+pip freeze > requirements.txt
 ```
