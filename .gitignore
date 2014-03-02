@@ -41,3 +41,4 @@ nosetests.xml
 
 env
 venv
+data/100000tweets.txt
