@@ -41,4 +41,5 @@ nosetests.xml
 
 env
 venv
-data/100000tweets.txt
+data/apple
+data/tweets
