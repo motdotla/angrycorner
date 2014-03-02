@@ -41,5 +41,5 @@ nosetests.xml
 
 env
 venv
-data/apple
-data/tweets
+angry_engine/data/apple
+angry_engine/data/tweets
