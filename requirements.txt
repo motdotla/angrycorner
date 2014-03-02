@@ -5,4 +5,5 @@ PyYAML==3.10
 Werkzeug==0.9.4
 itsdangerous==0.23
 nltk==2.0.4
+pystache==0.5.3
 wsgiref==0.1.2
