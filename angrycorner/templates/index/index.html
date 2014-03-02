@@ -1,1 +1,52 @@
 <h1>angrycorner, yo.</h1>
+
+<script type="text/javascript">
+
+function getcitydetails(fqcn) {
+  if (typeof fqcn == "undefined") fqcn = jQuery("#f_elem_city").val();
+ 
+  cityfqcn = fqcn;
+ 
+  if (cityfqcn) {
+    jQuery.getJSON("http://gd.geobytes.com/GetCityDetails?callback=?&fqcn="+cityfqcn, function (data) {
+      console.log("HERE's YOUR DETAILED DATA:");
+      console.log(data);
+    });
+  }
+}
+
+jQuery(function () {
+  jQuery("#f_elem_city").autocomplete({
+    source: function (request, response) {
+      jQuery.getJSON("http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term, function (data) {
+        response(data);
+      });
+    },
+    minLength: 3,
+    select: function (event, ui) {
+      var selectedObj = ui.item;
+      jQuery("#f_elem_city").val(selectedObj.value);
+
+      console.log("YOU CHOSE:");
+      getcitydetails(selectedObj.value);
+
+      return false;
+    },
+    open: function () {
+      jQuery(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+    },
+    close: function () {
+      jQuery(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+    }
+  });
+  jQuery("#f_elem_city").autocomplete("option", "delay", 100);
+});
+</script>
+   
+<form action="" method="post" name="form_demo" id="form_demo" enctype="multipart/form-data" onsubmit="return false;">
+  <p>
+    <strong>Please enter</strong> your city here. 
+    <input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
+</form>
+
+
