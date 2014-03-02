@@ -39,7 +39,8 @@ classifier = get_trained_classifier(training_set)
 # print 'accuracy:', nltk.classify.util.accuracy(classifier, testing_set)
 # classifier.show_most_informative_features()
 
-# tweet = "Submitted a PR to @AtomEditor's autoflow package since all the cool kids are doing it."
+tweet = "Submitted a PR to @AtomEditor's autoflow package since all the cool kids are doing it."
 
-# print classifier.classify(format_feature(tweet.split()))
+for i in xrange(1000):
+    classifier.classify(format_feature(tweet.split()))
 
