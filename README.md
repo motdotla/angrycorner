@@ -5,10 +5,20 @@
 ## Usage
 
 ```
+git clone https://github.com/scottmotte/angrycorner.git
+cd angrycorner
 virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
+```
+
+## Deploy
+
+```
+git clone https://github.com/scottmotte/angrycorner.git
+cd angrycorner
+heroku addons:add mongohq:small
 ```
 
 ## Documentation

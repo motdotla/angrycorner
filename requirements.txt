@@ -3,8 +3,9 @@ Jinja2==2.7.2
 MarkupSafe==0.18
 PyYAML==3.10
 Werkzeug==0.9.4
-gunicorn==18.0
+dotenv==0.0.3
 itsdangerous==0.23
 nltk==2.0.4
+pymongo==2.6.3
 pystache==0.5.3
 wsgiref==0.1.2
