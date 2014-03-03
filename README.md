@@ -257,3 +257,4 @@ understanding anger to use the knowledge
 * feels like something you want to use because it is so contrarian
 * also needs to be simlpe to use. dead easy so you show you friends
 * <http://i2.wp.com/boygeniusreport.files.wordpress.com/2014/02/secret-app-iphone.jpg?w=870>
+* <http://zagg-blog.s3.amazonaws.com/community/blog/wp-content/uploads/2014/01/secret-app-screenshots-1024x605.jpg>
