@@ -8,6 +8,13 @@
 virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
+cp .env.example .env
+```
+
+## Other
+
+```
+pip install git+git://github.com/pedroburon/dotenv.git@master
 ```
 
 ```
@@ -17,3 +24,4 @@ pip freeze > requirements.txt
 ```
 api = twitter_api.Api(consumer_key, consumer_secret)
 ```
+

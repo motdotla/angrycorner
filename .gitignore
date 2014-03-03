@@ -43,3 +43,6 @@ env
 venv
 data/apple
 data/tweets
+
+.env
+!.env.example
