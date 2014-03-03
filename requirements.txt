@@ -3,6 +3,7 @@ Jinja2==2.7.2
 MarkupSafe==0.18
 PyYAML==3.10
 Werkzeug==0.9.4
+gunicorn==18.0
 itsdangerous==0.23
 nltk==2.0.4
 pystache==0.5.3
