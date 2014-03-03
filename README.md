@@ -64,6 +64,11 @@ pip freeze > requirements.txt
 api = twitter_api.Api(consumer_key, consumer_secret)
 ```
 
+## To run the Angry Engine
+From the angry engine subdirectory
+```
+gunicorn main:app
+```
 
 
 
