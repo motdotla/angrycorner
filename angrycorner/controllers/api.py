@@ -5,7 +5,7 @@ from angrycorner import app
 from flask import abort, request, make_response
 import angrycorner.lib.twitter_api as twitter_api
 
-@app.route('/trends')
+@app.route('/api/trends')
 def trends():
 
   """ trends """
@@ -24,7 +24,7 @@ def trends():
   return json.dumps(result)
 
   
-@app.route('/trends/closest')
+@app.route('/api/trends/closest')
 def trends_closest():
 
   """ trends/closest """
@@ -40,7 +40,7 @@ def trends_closest():
 
   return json.dumps(result)
 
-@app.route('/trends/place')
+@app.route('/api/trends/place')
 def trends_place():
 
   """ trends/place """
