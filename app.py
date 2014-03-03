@@ -10,5 +10,8 @@ for line in lines:
   value       = split_line[1]
   os.environ[key] = value
 
+print os.environ.get('TWITTER_API_KEY')
+print os.environ.get('TWITTER_API_SECRET')
+
 port = int(os.environ.get('PORT', 5000))
 app.run(host='0.0.0.0', port=port, debug=True)
