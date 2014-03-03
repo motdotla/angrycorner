@@ -256,3 +256,4 @@ understanding anger to use the knowledge
 * contrarian
 * feels like something you want to use because it is so contrarian
 * also needs to be simlpe to use. dead easy so you show you friends
+* <http://i2.wp.com/boygeniusreport.files.wordpress.com/2014/02/secret-app-iphone.jpg?w=870>
