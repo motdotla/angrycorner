@@ -10,13 +10,15 @@ def load_dataset(filename, sentiment):
             features.append((dict([(word, True) for word in row[5].split(' ')]), sentiment))
         return features
 
-def format_feature(tweet):
+def format_tweet(tweet):
     document_words = set(tweet)
     return dict([(word, True) for word in tweet])
 
 
 def get_trained_classifier(training_set):
     return nltk.NaiveBayesClassifier.train(training_set)
+
+
 
 positive_train = "data/1000_happy.csv"
 negative_train = "data/1000_angry.csv"
@@ -35,12 +37,8 @@ testing_set = happy_set[:test_cutoff] + angry_set[:test_cutoff]
 
 classifier = get_trained_classifier(training_set)
 
-# Statistics and trials below here
-# print 'accuracy:', nltk.classify.util.accuracy(classifier, testing_set)
-# classifier.show_most_informative_features()
+class AngryClassifier():
+    classifier = get_trained_classifier(training_set)
 
-tweet = "Submitted a PR to @AtomEditor's autoflow package since all the cool kids are doing it."
-
-for i in xrange(1000):
-    classifier.classify(format_feature(tweet.split()))
-
+    def classify_tweet(self,tweet):
+        return self.classifier.classify(format_tweet(tweet.split()))
