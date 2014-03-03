@@ -11,6 +11,20 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
+## Documentation
+
+### /
+
+```
+curl -X GET http://localhost:5000
+```
+
+### /trends/closest?lat=[lat]&long=[long]
+
+```
+curl -X GET http://localhost:5000/trends/closest?lat=36.1667&long=-86.7878
+```
+
 ## Other
 
 ```

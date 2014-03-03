@@ -1,5 +1,4 @@
 import os
-import re
 from angrycorner import app
 
 ## dotenv
