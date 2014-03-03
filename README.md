@@ -174,6 +174,77 @@ HIVEMIND
 
 Share angry tweets with client.
 
+### Verticals
+
+API access for ad companies - so they can adjust their advertising at a particular time when people are angry in a time and space.
+
+API access for companies to only show good tweets on their website. We'll filter out the bad ones - little js plugin, and we'll email you the bad ones as a digest email that day.
+
+
+
+
+Business plan
+Create - what you're making
+Distribute - 
+Capture - transaction and pricing strategy
+
+
+
+
+
+
+How has the model changed over that period. We added google ads - which wasn't originally there. 
+
+Automatic twitter-feed sensor. What's the likelihood that, that happens.
+
+Filter out angry tweets for small businesses? The last one sounds more like a business. Pick the constant theme - this is how we expand into additional markets and put that label on there.
+
+Are you trying to create a business out of this? Absolutely. It's a cool - it's a little contrarian. It hasn't really been done there. Find some sarcastic angry stuff comparisons. 
+
+There are people who always want to complain about something - just want to start a conversation and share some shared anger. You forge a relationship over anger. 
+
+We can convey it a little more strongly if we choose the target a little more specifically. 
+
+Small business - that part is convoluted. 
+
+It would be a good icebreaker for startups. "I definitely think it is something that is just cool"
+
+You are going to let companies understand consumer sentiment - to get them to a purchasing decision.
+
+People will act on emotion like anger - even more than positive anger.
+
+What's that piece of information that if john had, he's gonna buy my product. That's where there is some value for him to speculate on.
+
+Customer's are more likely to share negative emotion. Converting negative emotion to decision making. 
+
+
+
+
+
+
+
+"from good thievery comes good policing" - saying in India
+
+understanding anger to use the knowledge 
+
+
+
+
+## Takeaways
+
+- 3X more likely to share negative experiences
+- We can convert negative sentiment to 
+- From good thievery comes good policing
+- Converting negative emotion to decision making - making you money
+- hivemind
+- start w/ something negative to grab the people's attention
+
+
+
+
+1. 
+2. 
+3. 
 
 
 
