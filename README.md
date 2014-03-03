@@ -234,6 +234,159 @@ understanding anger to use the knowledge
 
 
 
+Organize the world's emotions (beginning with Anger) and make it universally accessible and useful.
+
+
+Emotional Intelligence - another vertical for hiring.
+
+
+
+
+## IdeaFrameApp
+
+1. Product or Service:
+Angry corner is a way to read the hive mind on the go. Social media has a massive influence on society, and consuming it in a simple way is a problem, we are solving. 
+
+2. Customer:
+Casual users who utilize our service in a social manner. 
+Businesses or corporations who want to utilize an arbitrage of emotion to better there product.
+
+3. Distribution Methods:
+Web service/mobile app
+
+4. Customer Intimacy:
+Consumer: Addiction of always being in the know on the hive mind. 
+Businesses provides a valuable service for those trying to mine the hivemind for the sentiment of a product.
+
+5. Revenue: 
+Charged access to our API so businesses can monitor products. 
+Measure of emotional intelligence on individuals. Klout score for emotional intelligence. 
+
+6. Critical Resources:
+Machine learning algorithm
+User-Experience
+
+7. Partners:
+Data partners - unfettered access to firehose data (GNIP, Twitter)
+
+8. Essential Recipe:
+Code and build algorithm. Continually improve algorithm. Utilization of mechanical turk for validation.
+
+9. Expenses
+Servers
+Paid access to data sources
+Elance
+
+
+
+
+Emotions. They're all around us and they influence us more than logic. But marketers and businesses have a tough time measuring and tapping into those emotions on a mass scale - the strongest of which is anger.
+
+We're angry corner. We've built a service that makes it easy to read this hivemind of anger on the go.
+
+<<<>>>>>
+
+It's kinda like a perverted Klout score.
+
+Open up the up, click make me angry, and we tell you in time and space what people are angry about. It's that easy using our smart algorithms and advanced machine learning.
+
+Arbitraging emotion for the ALMIGHTY DOLLA'!
+
+
+
+
+
+
+
+
+
+
+
+## Pitch
+
+State the problem, 
+State the solution,
+Describe the biz model
+- create
+- distribute
+- capture value
+
+Follow us on twitter at @TheAngryCorner.
+
+
+* EQ Score - like a perverted klout score
+* 3X more likely to share negative experiences
+* convert negative sentiment to DOLLA DOLLA BILLS
+* hivemind
+* arbitraging emotion for the ALMIGHTY DOLLA
+* from good thievery comes good policing
+* 
+
+====================
+
+We're Angry Corner.
+
+Emotion Intelligence is all around us. It's the new IQ. But it's really hard for businesses to measure on a hivemind and individual level. What if we could change that.
+
+We're angry corner, and we're organizing the world's emotions, beginning with anger. We're making anger universally accessible and useful. 
+
+We've created an algorithm using advanced machine learning to deduce 
+
+====================
+
+Emotions. They're all around us and they influence us more than logic. But marketers and businesses have a tough time measuring and tapping into those emotions on a mass scale - the strongest of which is anger.
+
+We're angry corner. We've built a service that makes it easy to read this hivemind of anger on the go.
+
+<<<>>>>>
+
+It's kinda like a perverted Klout score.
+
+Open up the up, click make me angry, and we tell you in time and space what people are angry about. It's that easy using our smart algorithms and advanced machine learning.
+
+Arbitraging emotion for the ALMIGHTY DOLLA'!
+
+
+
+
+
+
+
+
+digitizing emotion
+
+harnessing anger for social change
+
+anger makes you stronger, young skywalker
+
+- 3X more likely to share negative experiences
+- We can convert negative sentiment to 
+- From good thievery comes good policing
+- Converting negative emotion to decision making - making you money
+- hivemind
+- start w/ something negative to grab the people's attention
+
+Angry Corner. Angry corner makes it super easy for you to know what to be angry about!
+
+Type in your location, and bam - we deliver something specific to that area and that point in time to be angry about. It's like magic. 
+
+How do we do this? We do this using advanced machine learning on a firehose of tweets.
+
+Why do we do this? 
+1) for the general public it's always free. We do this to give you perspective in your life?
+2) For businesses, our algorithm is so good that we can filter out any bad tweets about your product. Feel safe and secure at night knowing that you can put a customized feed of your tweets about your company on the homepage of your site without worry of a bad one showing up. And that's how we make money.
+
+We take money from the rich and give perspective to the poor.
+
+
+We're also considering a patent pending anger influence score - like a twisted Klout score - so you can confirm exactly what you always believed about your angry friends. Shame them with their anger score into tweeting less angry posts.
+
+
+
+Organize the world's emotions (beginning with Anger) and make it universally accessible and useful.
+
+
+
 
 ## Takeaways
 
@@ -253,6 +406,8 @@ understanding anger to use the knowledge
 
 
 
+
+
 ## Design inspiration
 
 * finding something angry
@@ -264,3 +419,4 @@ understanding anger to use the knowledge
 * <http://i2.wp.com/boygeniusreport.files.wordpress.com/2014/02/secret-app-iphone.jpg?w=870>
 * <http://zagg-blog.s3.amazonaws.com/community/blog/wp-content/uploads/2014/01/secret-app-screenshots-1024x605.jpg>
 * [Our twitter](https://twitter.com/theangrycorner)
+
