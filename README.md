@@ -22,20 +22,33 @@ curl -X GET http://localhost:5000
 ### /api/trends?lat=[lat]&long=[long]
 
 ```
-curl -X GET http://localhost:5000/trends?lat=[lat]&long=[long]
+curl -X GET http://localhost:5000/api/trends?lat=[lat]&long=[long]
 ```
 
 ### /api/trends/closest?lat=[lat]&long=[long]
 
 ```
-curl -X GET http://localhost:5000/trends/closest?lat=36.1667&long=-86.7878
+curl -X GET http://localhost:5000/api/trends/closest?lat=36.1667&long=-86.7878
 ```
 
 ### /api/trends/place?id=[id]
 
 ```
-curl -X GET http://localhost:5000/trends/place?id=2457170
+curl -X GET http://localhost:5000/api/trends/place?id=2457170
 ```
+
+### /api/search?q=[q]
+
+```
+curl -X GET http://localhost:5000/api/search?q=%22Bill+Murray%22
+```
+
+### /api/magic?lat=[lat]&long=[long]
+
+```
+curl -X GET http://localhost:5000/api/magic?lat=36.1667&long=-86.7878
+```
+
 
 ## Other
 
