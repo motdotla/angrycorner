@@ -248,3 +248,11 @@ understanding anger to use the knowledge
 
 
 
+## Design inspiration
+
+* finding something angry
+* but welcoming at the same time
+* secret
+* contrarian
+* feels like something you want to use because it is so contrarian
+* also needs to be simlpe to use. dead easy so you show you friends
