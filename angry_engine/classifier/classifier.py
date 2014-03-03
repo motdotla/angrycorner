@@ -11,7 +11,7 @@ def load_dataset(filename, sentiment):
         return features
 
 def format_tweet(tweet):
-    document_words = set(tweet)
+    document_words = set(tweet.split(' '))
     return dict([(word, True) for word in tweet])
 
 
@@ -22,7 +22,6 @@ def get_trained_classifier(training_set):
 
 positive_train = "data/1000_happy.csv"
 negative_train = "data/1000_angry.csv"
-test_data = "data/testdata.csv"
 
 happy_set = load_dataset(positive_train, "happy")
 angry_set = load_dataset(negative_train, "angry")
@@ -30,10 +29,11 @@ random.shuffle(happy_set)
 random.shuffle(angry_set)
 
 # 80-20 testing
-test_cutoff = int(len(happy_set)*.8)
+#test_cutoff = int(len(happy_set)*.8)
+#testing_set = happy_set[:test_cutoff] + angry_set[:test_cutoff]
 
-training_set = happy_set[test_cutoff:] + angry_set[test_cutoff:]
-testing_set = happy_set[:test_cutoff] + angry_set[:test_cutoff]
+#training_set = happy_set[test_cutoff:] + angry_set[test_cutoff:]
+training_set = happy_set + angry_set
 
 classifier = get_trained_classifier(training_set)
 
@@ -46,7 +46,7 @@ class AngryClassifier():
     def classify_many(self,tweets):
         sentiments = []
         for tweet in tweets:
-            sentiments.append(self.classifier.classify(format_tweet(tweet.split())))
+            sentiments.append(self.classifier.classify(format_tweet(tweet)))
         if sentiments.count("happy") > sentiments.count("angry"):
             return "happy"
         else:

@@ -1,19 +1,23 @@
-from flask import Flask
 import os
+#import predictor.demo
+from flask import Flask, session, redirect, url_for, escape, request
+import classifier.classifier
+
 from classifier import AngryClassifier
 
-port = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
-app.run(host='0.0.0.0', port=port, debug=True)
 classifier = AngryClassifier()
 
-
-@app.route("/single")
+@app.route('/single')
 def classify_single():
-    return "hey"
-    #status = classifier.classify_tweet("This bus is making me sleepy")
-    #return status
-    
+    tweet = "string"
+    sentiment = classifier.classify_tweet(tweet)
+    return "angry or happy"
 
-
+@app.route('/many')
+def classify_many():
+    tweets = ["string",
+              "string"]
+    sentiment = classifier.classify_tweets(tweets)
+    return "something else"
