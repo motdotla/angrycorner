@@ -19,10 +19,22 @@ cp .env.example .env
 curl -X GET http://localhost:5000
 ```
 
+### /trends?lat=[lat]&long=[long]
+
+```
+curl -X GET http://localhost:5000/trends?lat=[lat]&long=[long]
+```
+
 ### /trends/closest?lat=[lat]&long=[long]
 
 ```
 curl -X GET http://localhost:5000/trends/closest?lat=36.1667&long=-86.7878
+```
+
+### /trends/place?id=[id]
+
+```
+curl -X GET http://localhost:5000/trends/place?id=2457170
 ```
 
 ## Other
