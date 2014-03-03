@@ -4,6 +4,21 @@ import urlparse
 from angrycorner import app
 from flask import abort, request, make_response
 import angrycorner.lib.twitter_api as twitter_api
+import angrycorner.lib.database as database
+
+@app.route('/api/location')
+def location():
+
+  """ location """
+
+  conn = database.Connect()
+  uid  = conn.db.test_collection.insert({"testdoc":"totaltest"})
+  print uid
+
+  r = make_response('{"success": "true", "location": {"id": "'+str(uid)+'"}}')
+  r.mimetype = 'application/json'
+
+  return r
 
 @app.route('/api/magic')
 def magic():

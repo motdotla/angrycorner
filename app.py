@@ -1,5 +1,7 @@
 import os
 from angrycorner import app
+import pymongo
+from urlparse import urlparse
 
 ## dotenv
 lines = [line.strip() for line in open('.env')]
