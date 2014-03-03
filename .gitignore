@@ -46,3 +46,5 @@ data/tweets
 
 .env
 !.env.example
+angry_engine/data/apple
+angry_engine/data/tweets
