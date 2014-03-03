@@ -42,3 +42,13 @@ class AngryClassifier():
 
     def classify_tweet(self,tweet):
         return self.classifier.classify(format_tweet(tweet.split()))
+
+    def classify_many(self,tweets):
+        sentiments = []
+        for tweet in tweets:
+            sentiments.append(self.classifier.classify(format_tweet(tweet.split())))
+        if sentiments.count("happy") > sentiments.count("angry"):
+            return "happy"
+        else:
+            return "angry"
+
