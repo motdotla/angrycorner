@@ -5,6 +5,7 @@ from angrycorner import app, db
 from bson.objectid import ObjectId
 from flask import abort, request, make_response
 import angrycorner.lib.twitter_api as twitter_api
+import angrycorner.lib.magic as magic
 
 @app.route('/api/location')
 def create_location():
@@ -52,24 +53,27 @@ def get_location(id):
   return r
 
 @app.route('/api/magic')
-def magic():
+def get_magic():
 
   """ magic """
-  twitter_api_key     = os.environ.get('TWITTER_API_KEY')
-  twitter_api_secret  = os.environ.get('TWITTER_API_SECRET')
-  api = twitter_api.Api(twitter_api_key, twitter_api_secret)
 
-  latitude  = request.args.get('lat', '36.1667')
-  longitude = request.args.get('long', '-86.7878')
+  magician  = magic.Magic("5315269cff3c630acd18360b")
+  data      = magician.process()
+  #twitter_api_key     = os.environ.get('TWITTER_API_KEY')
+  #twitter_api_secret  = os.environ.get('TWITTER_API_SECRET')
+  #api = twitter_api.Api(twitter_api_key, twitter_api_secret)
 
-  result    = api.get_trends_closest(latitude, longitude)
-  woeid     = result[0]['woeid']
+  #latitude  = request.args.get('lat', '36.1667')
+  #longitude = request.args.get('long', '-86.7878')
 
-  result    = api.get_trends_place(woeid)
-  query     = result[0]['trends'][0]['query']
+  #result    = api.get_trends_closest(latitude, longitude)
+  #woeid     = result[0]['woeid']
 
-  result    = api.get_search(query)
-  data      = json.dumps(result)
+  #result    = api.get_trends_place(woeid)
+  #query     = result[0]['trends'][0]['query']
+
+  #result    = api.get_search(query)
+  #data      = json.dumps(result)
 
   r           = make_response( data ) 
   r.mimetype  = 'application/json'
