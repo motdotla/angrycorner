@@ -11,6 +11,9 @@ function getcitydetails(fqcn) {
     jQuery.getJSON("http://gd.geobytes.com/GetCityDetails?callback=?&fqcn="+cityfqcn, function (data) {
       console.log("HERE's YOUR DETAILED DATA:");
       console.log(data);
+
+      $("#lat").val(data.geobyteslatitude);
+      $("#long").val(data.geobyteslongitude);
     });
   }
 }
@@ -40,24 +43,32 @@ jQuery(function () {
     }
   });
   jQuery("#f_elem_city").autocomplete("option", "delay", 100);
-});
 
-// smartPoller
-$.smartPoller(function(retry) {
-  $.getJSON(url, function(data) {
-    if (data) {
-      doSomething(data)
-    } else {
-      retry()
+  jQuery("#submit-btn").click(function() {
+    var latitude   = $("#lat").val();
+    var longitude  = $("#long").val();
+
+    if (!!latitude && !!longitude) {
+      $.get("/api/location?lat="+latitude+"&long="+longitude, function(json) {
+        console.log(json);
+        // redirect and pass id
+        window.location = "/result?id="+json.location.id
+      });
     }
-  })
-})
+  });
+});
 </script>
    
 <form action="" method="post" name="form_demo" id="form_demo" enctype="multipart/form-data" onsubmit="return false;">
   <p>
     <strong>Please enter</strong> your city here. 
     <input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
+    <input type="submit" id="submit-btn" />
+  </p>
+
+  <p>
+    <input type="text" id="lat" />
+    <input type="text" id="long" />
   </p>
 </form>
 

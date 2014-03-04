@@ -1,1 +1,34 @@
-index2
+<script>
+$(function() {
+  var url = $.url();
+  var id        = url.param('id');
+  var protocol  = url.attr('protocol');
+  var host      = url.attr('host');
+  var port      = url.attr('port');
+  var port_or_not = port ? ":"+port : "";
+
+  var query_url = [
+    protocol,
+    "://",
+    host,
+    port_or_not,
+    "/api/location/",
+    id
+  ].join("");
+
+  // smartPoller
+  $.smartPoller(function(retry) {
+    $.getJSON(query_url, function(json) {
+      if (json.success && json.location && !!json.location.processed) {
+        $("#processing").hide();
+        $("#angry-message").html(json.location.message);
+      } else {
+        retry()
+      }
+    })
+  });
+});
+</script>
+
+<p id="processing">processing...</p>
+<h2 id="angry-message"></h2>
