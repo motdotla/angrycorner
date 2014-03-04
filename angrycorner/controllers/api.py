@@ -8,13 +8,22 @@ import angrycorner.lib.twitter_api as twitter_api
 
 @app.route('/api/location')
 def create_location():
-  # ?lat=&long=
   latitude  = request.args.get('lat', '36.1667')
   longitude = request.args.get('long', '-86.7878')
 
-  uid = db.locations.insert({"lat":latitude, "long":longitude})
+  id = db.locations.insert({"lat":latitude, "long":longitude})
 
-  r           = make_response('{"success": "true", "location": {"id": "'+str(uid)+'"}}')
+  resp = {
+    'success': True,
+    'location': {
+      'id': str(id),
+      'lat': latitude,
+      'long': longitude
+    }
+  }
+
+  data        = json.dumps(resp)
+  r           = make_response(data)
   r.mimetype  = 'application/json'
   return r
 
