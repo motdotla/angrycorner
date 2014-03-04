@@ -1,23 +1,45 @@
 import os
 import json
 import urlparse
-from angrycorner import app
+from angrycorner import app, db
+from bson.objectid import ObjectId
 from flask import abort, request, make_response
 import angrycorner.lib.twitter_api as twitter_api
-import angrycorner.lib.database as database
 
 @app.route('/api/location')
-def location():
+def create_location():
+  # ?lat=&long=
+  latitude  = request.args.get('lat', '36.1667')
+  longitude = request.args.get('long', '-86.7878')
 
-  """ location """
+  uid = db.locations.insert({"lat":latitude, "long":longitude})
 
-  conn = database.Connect()
-  uid  = conn.db.test_collection.insert({"testdoc":"totaltest"})
-  print uid
+  r           = make_response('{"success": "true", "location": {"id": "'+str(uid)+'"}}')
+  r.mimetype  = 'application/json'
+  return r
 
-  r = make_response('{"success": "true", "location": {"id": "'+str(uid)+'"}}')
-  r.mimetype = 'application/json'
+@app.route('/api/location/<id>')
+def get_location(id):
+  document = db.locations.find_one({'_id': ObjectId(oid=str(id))})
 
+  if document == None:
+    r           = make_response('{"success": "false"}')
+    r.mimetype  = 'application/json'
+    return r
+   
+  resp = {
+    'success': True,
+    'location': {
+      'id': str(id),
+      'lat': document['lat'],
+      'long': document['long'],
+      'message': "ANGRY MESSAGE HERE"
+    }
+  }
+
+  data        = json.dumps(resp)
+  r           = make_response(data)
+  r.mimetype  = 'application/json'
   return r
 
 @app.route('/api/magic')
