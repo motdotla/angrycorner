@@ -59,21 +59,6 @@ def get_magic():
 
   magician  = magic.Magic("5315269cff3c630acd18360b")
   data      = magician.process()
-  #twitter_api_key     = os.environ.get('TWITTER_API_KEY')
-  #twitter_api_secret  = os.environ.get('TWITTER_API_SECRET')
-  #api = twitter_api.Api(twitter_api_key, twitter_api_secret)
-
-  #latitude  = request.args.get('lat', '36.1667')
-  #longitude = request.args.get('long', '-86.7878')
-
-  #result    = api.get_trends_closest(latitude, longitude)
-  #woeid     = result[0]['woeid']
-
-  #result    = api.get_trends_place(woeid)
-  #query     = result[0]['trends'][0]['query']
-
-  #result    = api.get_search(query)
-  #data      = json.dumps(result)
 
   r           = make_response( data ) 
   r.mimetype  = 'application/json'

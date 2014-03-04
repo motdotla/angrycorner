@@ -3,6 +3,7 @@ import json
 from angrycorner import app, db
 from bson.objectid import ObjectId
 import angrycorner.lib.twitter_api as twitter_api
+import angrycorner.lib.angry_engine.classifier.classifier as classifier
 
 class Magic():
 
@@ -26,16 +27,35 @@ class Magic():
 
     return result[0]['trends'][0]['query']
 
+  def _filterToStatuses(self, query):
+    result    = self.twitter.get_search(query)
+
+    statuses  = result['statuses']
+    status_texts = []
+    for status in statuses:
+      status_texts.append(status['text'])
+
+    return status_texts
+
+  def _sentimentizeThatIsh(self, statuses):
+    angry_classifier  = classifier.AngryClassifier()
+    sentiment         = angry_classifier.classify_tweets(statuses)
+
+    print sentiment
+
+    return sentiment
+
   def process(self):
     document  = self._getDocument()
 
     latitude  = document['lat']
     longitude = document['long']
 
-    woeid     = self._getTrendsClosestWoeid(latitude, longitude)
-    query     = self._getTrendsPlaceFirstQuery(woeid)
+    woeid         = self._getTrendsClosestWoeid(latitude, longitude)
+    query         = self._getTrendsPlaceFirstQuery(woeid)
+    statuses      = self._filterToStatuses(query)
+    result        = self._sentimentizeThatIsh(statuses)
 
-    result    = self.twitter.get_search(query)
-    data      = json.dumps(result)
+    data = str(result)
 
     return data
