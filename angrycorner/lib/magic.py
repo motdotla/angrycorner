@@ -56,6 +56,8 @@ class Magic():
     statuses      = self._filterToStatuses(query)
     result        = self._sentimentizeThatIsh(statuses)
 
+    db.locations.update({'_id': ObjectId(oid=str(self.location_uid))}, { "$set": { "processed": True }}, True)
+
     data = str(result)
 
     return data
