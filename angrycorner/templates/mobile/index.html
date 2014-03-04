@@ -41,12 +41,24 @@ jQuery(function () {
   });
   jQuery("#f_elem_city").autocomplete("option", "delay", 100);
 });
+
+// smartPoller
+$.smartPoller(function(retry) {
+  $.getJSON(url, function(data) {
+    if (data) {
+      doSomething(data)
+    } else {
+      retry()
+    }
+  })
+})
 </script>
    
 <form action="" method="post" name="form_demo" id="form_demo" enctype="multipart/form-data" onsubmit="return false;">
   <p>
     <strong>Please enter</strong> your city here. 
     <input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
+  </p>
 </form>
 
 

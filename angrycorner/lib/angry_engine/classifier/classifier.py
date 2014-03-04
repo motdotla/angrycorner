@@ -5,10 +5,8 @@ import random
 
 def load_dataset(filename, sentiment):
     current_dir   = os.path.dirname(__file__)
-    print current_dir
     rel_env_path  = "../"+filename
     abs_file_path = os.path.join(current_dir, rel_env_path)
-    print abs_file_path
 
     with open(abs_file_path, "rb") as csvfile:
         reader = csv.reader(csvfile)

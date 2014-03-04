@@ -41,8 +41,6 @@ class Magic():
     angry_classifier  = classifier.AngryClassifier()
     sentiment         = angry_classifier.classify_tweets(statuses)
 
-    print sentiment
-
     return sentiment
 
   def process(self):
