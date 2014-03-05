@@ -7,6 +7,32 @@ from flask import abort, request, make_response
 import angrycorner.lib.twitter_api as twitter_api
 import angrycorner.lib.magic as magic
 
+@app.route('/a')
+def a():
+  username  = request.args.get('username', 'carl_talks')
+  magician  = magic.Magic('filler-shit')
+  weights   = magician.a(username)
+
+  resp = {
+    'success': True,
+    'weights': weights
+  }
+
+  dump        = json.dumps(resp)
+  r           = make_response(dump)
+  r.mimetype  = 'application/json'
+  return r
+
+
+
+
+
+
+
+
+
+
+
 @app.route('/api/location')
 def create_location():
   latitude  = request.args.get('lat', '36.1667')
@@ -20,7 +46,8 @@ def create_location():
       'id': str(id),
       'lat': latitude,
       'long': longitude,
-      'processed': False
+      'processed': False,
+      'weights': []
     }
   }
 
@@ -45,7 +72,8 @@ def get_location(id):
       'lat': document['lat'],
       'long': document['long'],
       'processed': document.get('processed', False),
-      'message': "ANGRY MESSAGE HERE"
+      'message': "ANGRY MESSAGE HERE",
+      'weights': document['weights']
     }
   }
 

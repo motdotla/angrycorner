@@ -66,14 +66,13 @@ class AngryClassifier():
         for tweet in tweets:
             sentiments.append(self.classifier.classify(format_tweet(tweet)))
             for sentiment in sentiments:
-              print sentiment
-              if sentiment == "happy":
-                  current_value = current_value + 1
-                  current_value = min(current_value, 10)
-                  values.append(current_value)
-              else:
-                  current_value = current_value - 1
-                  current_value = max(current_value, -10)
-                  values.append(current_value)
+                if sentiment == "happy":
+                    current_value = current_value + 1
+                    current_value = min(current_value, 10)
+                    values.append(current_value)
+                else:
+                    current_value = current_value - 1
+                    current_value = max(current_value, -10)
+                    values.append(current_value)
 
         return values

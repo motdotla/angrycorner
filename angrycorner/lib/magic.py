@@ -77,10 +77,23 @@ class Magic():
     statuses      = self._filterToStatuses(query)
     result        = self._normalizeThoseSentiments(statuses)
 
+    print result
+
     db.locations.update({'_id': ObjectId(oid=str(self.location_uid))}, { "$set": { "processed": True }}, True)
+    db.locations.update({'_id': ObjectId(oid=str(self.location_uid))}, { "$set": { "weights": result }}, True)
 
     data = str(result)
 
     return data
+
+  def a(self, username):
+    statuses      = self.twitter.get_timeline(username)
+
+    status_texts  = []
+    for status in statuses:
+      status_texts.append(status['text'])
+    result        = self._normalizeThoseSentiments(status_texts)
+
+    return result
 
 
