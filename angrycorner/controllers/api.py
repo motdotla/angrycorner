@@ -6,8 +6,10 @@ from bson.objectid import ObjectId
 from flask import abort, request, make_response
 import angrycorner.lib.twitter_api as twitter_api
 import angrycorner.lib.magic as magic
+from flask_cors import cross_origin
 
 @app.route('/a')
+@cross_origin()
 def a():
   username  = request.args.get('username', 'carl_talks')
   magician  = magic.Magic('filler-shit')
