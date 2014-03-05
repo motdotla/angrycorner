@@ -92,6 +92,9 @@ class Magic():
     status_texts  = []
     for status in statuses:
       status_texts.append(status['text'])
+
+    print len(status_texts)
+    print status_texts
     result        = self._normalizeThoseSentiments(status_texts)
 
     return result
