@@ -21,7 +21,7 @@ def a():
   dump        = json.dumps(resp)
   r           = make_response(dump)
   r.mimetype  = 'application/json'
-  response.headers['Access-Control-Allow-Origin'] = "*"
+  r.headers['Access-Control-Allow-Origin'] = "*"
   return r
 
 
