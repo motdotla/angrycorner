@@ -56,9 +56,19 @@ def get_location(id):
   return r
 
 @app.route('/api/process/<id>')
-def get_magic(id):
+def process(id):
   magician  = magic.Magic(id)
   data      = magician.process()
+
+  r           = make_response( data ) 
+  r.mimetype  = 'application/json'
+
+  return r
+
+@app.route('/api/process_to_attidues/<id>')
+def process_to_attitudes(id):
+  magician  = magic.Magic(id)
+  data      = magician.process_to_attitudes()
 
   r           = make_response( data ) 
   r.mimetype  = 'application/json'

@@ -42,6 +42,12 @@ class Magic():
     sentiment         = angry_classifier.classify_tweets(statuses)
 
     return sentiment
+ 
+  def _normalizeThoseSentiments(self, statuses):
+    angry_classifier  = classifier.AngryClassifier()
+    sentiment         = angry_classifier.normalize_happy_angry_values_from_tweets(statuses)
+
+    return sentiment
 
   def process(self):
     document  = self._getDocument()
@@ -59,3 +65,22 @@ class Magic():
     data = str(result)
 
     return data
+
+  def process_to_attitudes(self):
+    document  = self._getDocument()
+
+    latitude  = document['lat']
+    longitude = document['long']
+
+    woeid         = self._getTrendsClosestWoeid(latitude, longitude)
+    query         = self._getTrendsPlaceFirstQuery(woeid)
+    statuses      = self._filterToStatuses(query)
+    result        = self._normalizeThoseSentiments(statuses)
+
+    db.locations.update({'_id': ObjectId(oid=str(self.location_uid))}, { "$set": { "processed": True }}, True)
+
+    data = str(result)
+
+    return data
+
+
