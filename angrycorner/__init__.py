@@ -4,15 +4,18 @@ import pymongo
 from urlparse import urlparse
 
 ## dotenv
-current_dir   = os.path.dirname(__file__)
-rel_env_path  = "../.env"
-abs_file_path = os.path.join(current_dir, rel_env_path)
-lines         = [line.strip() for line in open(abs_file_path)]
-for line in lines:
-  split_line  = line.split("=")
-  key         = split_line[0]
-  value       = split_line[1]
-  os.environ[key] = value
+try:
+  current_dir   = os.path.dirname(__file__)
+  rel_env_path  = "../.env"
+  abs_file_path = os.path.join(current_dir, rel_env_path)
+  lines         = [line.strip() for line in open(abs_file_path)]
+  for line in lines:
+    split_line  = line.split("=")
+    key         = split_line[0]
+    value       = split_line[1]
+    os.environ[key] = value
+except:
+  pass
 
 script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
 rel_path = "2091/data.txt"
